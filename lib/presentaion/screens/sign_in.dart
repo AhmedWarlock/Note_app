@@ -1,11 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/logic/cubit/app_cubit.dart';
 
 import '../widgets/widgets.dart';
-import 'home.dart';
-import 'sign_up.dart';
+
+//Sign in page
 
 class SignIn extends StatelessWidget {
   SignIn({Key? key}) : super(key: key);
@@ -25,9 +24,9 @@ class SignIn extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,7 +40,7 @@ class SignIn extends StatelessWidget {
                   decoration: MytextFieldDecoration.copyWith(
                       hintText: 'Enter Your Email'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8.0,
                 ),
                 TextField(
@@ -53,7 +52,7 @@ class SignIn extends StatelessWidget {
                   decoration: MytextFieldDecoration.copyWith(
                       hintText: 'Enter Your Password'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24.0,
                 ),
                 MaterialButtonWidget(
@@ -62,19 +61,19 @@ class SignIn extends StatelessWidget {
                     function: () {
                       signin();
                     }),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text('Not Signed up yet ?'),
-                  SizedBox(
+                  const Text('Not Signed up yet ?'),
+                  const SizedBox(
                     width: 5,
                   ),
                   InkWell(
                     onTap: () {
                       Navigator.pushReplacementNamed(context, 'signup');
                     },
-                    child: Text(
+                    child: const Text(
                       'Sign up',
                       style: TextStyle(color: Colors.deepOrangeAccent),
                     ),
